@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "relogio-pomodoro": {
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "relogio-pomodoro"
+    }
+  },
+  "defaultProject": "relogio-pomodoro",
+  "cli": {
+    "analytics": "8e0ea78d-4eaf-4c9c-bf69-cb4e6645d9d2"
+  }
 }
