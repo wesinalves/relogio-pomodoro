@@ -6,7 +6,7 @@
                 <a href="#" (click)="toggleDoubt()">Dúvidas?</a>
             </li>
             <li>
-                Opções
+                <a href="#" (click)="toggleConfig()">Configurações</a>
             </li>
             <li>
                 Monitorar
@@ -23,6 +23,11 @@
 <div *ngIf="doubt">
     <a href="#" (click)="toggleDoubt()">Fechar (x)</a>
     <app-pagina-duvidas></app-pagina-duvidas>
+</div>
+
+<div *ngIf="config">
+    <a href="#" (click)="toggleConfig()">Fechar (x)</a>
+    <app-configuracoes></app-configuracoes>
 </div>
 
 <footer>

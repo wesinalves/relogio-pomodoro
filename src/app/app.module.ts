@@ -1,22 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RelogioComponent } from './relogio/relogio.component';
 import { PaginaDuvidasComponent } from './pagina-duvidas/pagina-duvidas.component';
-import { ConfiguraticoesComponent } from './configuraticoes/configuraticoes.component';
+import { ConfiguracoesComponent } from './configuracoes/configuracoes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RelogioComponent,
     PaginaDuvidasComponent,
-    ConfiguraticoesComponent,
+    ConfiguracoesComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
