@@ -1,1 +1,10 @@
-<p>relogio works!</p>
+<div class="mensagem">
+    Vai com tudo, campeão!
+</div>
+<div class="relogio">
+    {{minutes | number: '2.0'}}:{{seconds | number: '2.0'}}
+</div>
+<div>
+    <button (click)="startClock()">Iniciar</button>
+    <button (click)="stopClock()">Parar</button>
+</div>
