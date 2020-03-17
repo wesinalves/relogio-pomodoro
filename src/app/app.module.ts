@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RelogioComponent } from './relogio/relogio.component';
+import { PaginaDuvidasComponent } from './pagina-duvidas/pagina-duvidas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RelogioComponent
+    RelogioComponent,
+    PaginaDuvidasComponent,
   ],
   imports: [
     BrowserModule,

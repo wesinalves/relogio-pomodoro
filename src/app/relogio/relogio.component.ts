@@ -21,13 +21,12 @@ export class RelogioComponent implements OnInit {
 
   startClock(){
     this.seconds -=1
-    if(this.seconds <= 0){
-      this.seconds = 59
-      this.minutes -= 1
-    }
     if(this.seconds <=0 && this.minutes <= 0){
       this.break = true
       this.stopClock()
+    }else if(this.seconds <= 0){
+        this.seconds = 59
+        this.minutes -= 1
     } 
     this.timer = setTimeout(() => {
       this.startClock()
