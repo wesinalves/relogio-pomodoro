@@ -1,3 +1,4 @@
+import { ConfigurationsService } from './../configurations.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,18 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./relogio.component.scss']
 })
 export class RelogioComponent implements OnInit {
-  seconds: number = 0
-  minutes: number = 25
+  seconds: number
+  minutes: number
   timer
   initialTime
   finalTime
-  start: boolean = false
   break: boolean = false
-
-  constructor() { }
+  doubt: boolean = false
+  
+  constructor(private config: ConfigurationsService) { }
 
   ngOnInit(): void {
+    this.seconds = this.config.seconds;
+    this.minutes = this.config.minutes;
   }
+
 
   startClock(){
     this.seconds -=1
@@ -31,7 +35,6 @@ export class RelogioComponent implements OnInit {
     this.timer = setTimeout(() => {
       this.startClock()
     }, 1000)
-    this.start = true
     if(this.initialTime == null)
       this.initialTime = new Date()
   }
@@ -50,5 +53,6 @@ export class RelogioComponent implements OnInit {
       this.finalTime = new Date()
     
   }
+
 
 }

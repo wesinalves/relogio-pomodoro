@@ -2,8 +2,8 @@
     <h1>Relógio Pomodoro</h1>
     <nav>
         <ul>
-            <li>
-                Dúvidas?
+            <li >
+                <a href="#" (click)="toggleDoubt()">Dúvidas?</a>
             </li>
             <li>
                 Opções
@@ -20,6 +20,10 @@
 
 
 <app-relogio></app-relogio>
+<div *ngIf="doubt">
+    <a href="#" (click)="toggleDoubt()">Fechar (x)</a>
+    <app-pagina-duvidas></app-pagina-duvidas>
+</div>
 
 <footer>
     @copyright - Wesin Ribeiro. Todoso os direitos reservados. 
