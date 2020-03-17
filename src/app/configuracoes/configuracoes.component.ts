@@ -19,7 +19,8 @@ export class ConfiguracoesComponent implements OnInit {
     }
 
     setPomodoro(){
-        this.config.minutes = this.pomodoro.time        
+        this.config.minutes = this.pomodoro.time
+        //console.log(this.pomodoro.time)
     }
 
     setBreak(){
