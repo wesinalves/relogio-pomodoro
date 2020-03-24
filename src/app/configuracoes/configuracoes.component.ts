@@ -10,16 +10,15 @@ import { PomodoroModel } from './pomodoro';
 export class ConfiguracoesComponent implements OnInit {
     pomodoro: PomodoroModel = new PomodoroModel()
 
-    constructor(private config: ConfigurationsService) {
-        this.pomodoro.time = config.minutes
-        this.pomodoro.break = config.break
-    }
+    constructor(private config: ConfigurationsService) { }
 
-    ngOnInit(): void {
+    ngOnInit(): void{
+        this.config.sharedMinute.subscribe(minutes => this.pomodoro.time = minutes)
+        this.pomodoro.break = this.config.break
     }
 
     setPomodoro(){
-        this.config.minutes = this.pomodoro.time
+        this.config.nextMinute(this.pomodoro.time)
         //console.log(this.pomodoro.time)
     }
 

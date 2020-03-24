@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ConfigurationsService {
-  minutes: number
-  seconds: number
-  break: number
+  
+  private minutes = new BehaviorSubject(25);
+  sharedMinute = this.minutes.asObservable();
+  seconds: number = 0;
+  break: number = 5;
 
-  constructor() {
-    this.minutes = 25
-    this.seconds = 0
-    this.break = 5
+  constructor() { }
+
+  nextMinute(minute: number){
+      this.minutes.next(minute)
   }
   
 }

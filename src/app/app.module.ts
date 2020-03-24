@@ -1,3 +1,4 @@
+import { ConfigurationsService } from './configurations.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -20,7 +21,7 @@ import { ConfiguracoesComponent } from './configuracoes/configuracoes.component'
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [ConfigurationsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
