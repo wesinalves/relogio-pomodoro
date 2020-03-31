@@ -9,6 +9,8 @@ import { RelogioComponent } from './relogio/relogio.component';
 import { PaginaDuvidasComponent } from './pagina-duvidas/pagina-duvidas.component';
 import { ConfiguracoesComponent } from './configuracoes/configuracoes.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
