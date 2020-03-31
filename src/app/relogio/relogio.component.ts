@@ -1,5 +1,6 @@
 import { ConfigurationsService } from './../configurations.service';
 import { Component, OnInit, OnChanges } from '@angular/core';
+import { SEOService } from './../seo.service';
 
 @Component({
     selector: 'app-relogio',
@@ -15,11 +16,12 @@ export class RelogioComponent implements OnInit {
     break: boolean = false
     doubt: boolean = false
 
-    constructor(private config: ConfigurationsService) { }
+    constructor(private config: ConfigurationsService, private seoService: SEOService) { }
 
     ngOnInit(): void {
         this.seconds = this.config.seconds;
         this.config.sharedMinute.subscribe(minutes => this.minutes = minutes)
+        this.seoService.addMetaTags()
     }
 
     startClock(): void {
