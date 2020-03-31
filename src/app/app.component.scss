@@ -138,3 +138,21 @@ footer a {
   }
 }
 
+.main{
+    display: flex;
+    
+}
+
+.relogio{
+    display: block;
+    min-width: 300px;
+}
+
+.pages{
+    background: #ffffff;
+    min-height: 90vh;
+    padding: 0 3.75rem 0 3.75rem;
+    transition: background, color 0.5s;
+    width: 100%;
+}
+

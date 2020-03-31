@@ -1,43 +1,50 @@
-<header>
-    <h1>Relógio Pomodoro</h1>
-    <nav>
-        <ul>
-            <li>
-                <a href="#" (click)="toggleDoubt()">Dúvidas?</a>
-            </li>
-            <li>
-                <a href="#" (click)="toggleConfig()">Configurações</a>
-            </li>
-            <li>
-                Monitorar
-            </li>
-            <li>
-                <a class="twitter-share-button"
-                href="https://twitter.com/intent/tweet?text=Acesse%20relogiopomodororo.com" target="_blank">
-              Tweet isso!</a>
-            </li>
-        </ul>
-    </nav>
+<div class="main">
+    <div class="relogio">
+        <header>
+            <h1>Relógio Pomodoro</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#" (click)="toggleDoubt()">Dúvidas?</a>
+                    </li>
+                    <li>
+                        <a href="#" (click)="toggleConfig()">Configurações</a>
+                    </li>
+                    <li>
+                        Monitorar
+                    </li>
+                    <li>
+                        <a class="twitter-share-button"
+                        href="https://twitter.com/intent/tweet?text=Acesse%20relogiopomodororo.com" target="_blank">
+                      Tweet isso!</a>
+                    </li>
+                </ul>
+            </nav>
+            
+        </header>
+        
+        <div class="fb-like" data-href="https://relogiopomodoro.com" data-width="" 
+            data-layout="button" data-action="like" data-size="small" data-share="true">
+            
+        </div>
+           
+        <app-relogio></app-relogio>
+    </div>
+
+
+<div class="pages" *ngIf="doubt || config">
+    <div *ngIf="doubt">
+        <a href="#" (click)="toggleDoubt()">Fechar (x)</a>
+        <app-pagina-duvidas></app-pagina-duvidas>
+    </div>
     
-</header>
-
-<div class="fb-like" data-href="https://relogiopomodoro.com" data-width="" 
-    data-layout="button" data-action="like" data-size="small" data-share="true">
-    
+    <div *ngIf="config">
+        <a href="#" (click)="toggleConfig()">Fechar (x)</a>
+        <app-configuracoes></app-configuracoes>
+    </div>
 </div>
 
-
-<app-relogio></app-relogio>
-<div *ngIf="doubt">
-    <a href="#" (click)="toggleDoubt()">Fechar (x)</a>
-    <app-pagina-duvidas></app-pagina-duvidas>
 </div>
-
-<div *ngIf="config">
-    <a href="#" (click)="toggleConfig()">Fechar (x)</a>
-    <app-configuracoes></app-configuracoes>
-</div>
-
 
 <footer>
     @copyright - Wesin Ribeiro. Todoso os direitos reservados.
