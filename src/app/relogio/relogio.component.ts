@@ -29,13 +29,15 @@ export class RelogioComponent implements OnInit {
         if (this.seconds <= 0 && this.minutes <= 0) {
             clearTimeout(this.timer)
             if (this.break == true){
-                this.minutes = this.config.break
-                this.break = false                
-            }else{
                 this.config.sharedMinute.subscribe(minutes => this.minutes = minutes)
+                this.break = false
+                this.notifyMe('Hora de trabalhar!')                                
+            }else{
+                this.minutes = this.config.break
                 this.break = true
-            }
-            this.notifyMe('Tempo esgotado!')
+                this.notifyMe('Hora de relaxar!')                
+            }            
+            this.playAlarm()
             return
                     
         } else if (this.seconds <= 0) {
@@ -74,7 +76,7 @@ export class RelogioComponent implements OnInit {
         // Let's check whether notification permissions have already been granted
         else if (Notification.permission === "granted") {
           // If it's okay let's create a notification
-          var notification = new Notification("Atenção!", {
+          var notification = new Notification("Tempo esgotado!", {
             icon: '../assets/pomodoro.png',
             body: message,
           });
@@ -85,13 +87,20 @@ export class RelogioComponent implements OnInit {
           Notification.requestPermission(function (permission) {
             // If the user accepts, let's create a notification
             if (permission === "granted") {
-              var notification = new Notification("Hi there!");
+              var notification = new Notification("Obrigado!");
             }
           });
         }
       
         // Finally, if the user has denied notifications and you 
         // want to be respectful there is no need to bother them any more.
+      }
+
+      playAlarm(){
+        var mp3Source = '<source src="../assets/alarm.mp3" type="audio/mpeg">';
+        var oggSource = '<source src="../assets/alarm.mp3.ogg" type="audio/ogg">';
+        //var embedSource = '<embed hidden="true" autostart="true" loop="false" src="' + filename +'.mp3">';
+        document.getElementById("sound").innerHTML='<audio autoplay="autoplay">' + mp3Source + oggSource  + '</audio>';
       }
 
     
