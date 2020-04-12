@@ -35,10 +35,9 @@ export class RelogioComponent implements OnInit {
                 this.config.sharedMinute.subscribe(minutes => this.minutes = minutes)
                 this.break = true
             }
-            console.log(this.break)
+            this.notifyMe('Tempo esgotado!')
             return
-        
-                     
+                    
         } else if (this.seconds <= 0) {
             this.seconds = 59
             this.minutes -= 1
@@ -66,7 +65,7 @@ export class RelogioComponent implements OnInit {
 
     }
 
-    notifyMe() {
+    notifyMe(message) {
         // Let's check if the browser supports notifications
         if (!("Notification" in window)) {
           alert("This browser does not support system notifications");
@@ -75,9 +74,9 @@ export class RelogioComponent implements OnInit {
         // Let's check whether notification permissions have already been granted
         else if (Notification.permission === "granted") {
           // If it's okay let's create a notification
-          var notification = new Notification("Hi there!", {
+          var notification = new Notification("Atenção!", {
             icon: '../assets/pomodoro.png',
-            body: 'Hey there! You\'ve been notified!',
+            body: message,
           });
         }
       
