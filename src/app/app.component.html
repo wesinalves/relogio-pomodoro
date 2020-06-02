@@ -1,17 +1,17 @@
 <div class="main">
-    <div class="watch">
+    
         <header>
-            <h1>Relógio Pomodoro</h1>
+            <h1>Relógio Pomodor<img src="assets/pomodoro.png" width="20"></h1>
             <nav>
-                <ul>
+                <ul id='horizontal-list'>
                     <li>
-                        <a href="#" (click)="toggleDoubt()">Dúvidas?</a>
+                        <a href="#" (click)="toggleDoubt()">Dúvidas? |</a>
                     </li>
                     <li>
-                        <a href="#" (click)="toggleConfig()">Configurações</a>
+                        <a href="#" (click)="toggleConfig()">Configurações |</a>
                     </li>
                     <li>
-                        Histórico
+                        Histórico |
                     </li>
                     <li>
                         <a class="twitter-share-button"
@@ -21,18 +21,22 @@
                 </ul>
             </nav>
             
+        
         </header>
         
         <div class="fb-like" data-href="https://relogiopomodoro.com" data-width="" 
-            data-layout="button" data-action="like" data-size="small" data-share="true">
+                data-layout="button" data-action="like" data-size="small" data-share="true">
             
-        </div>
-           
+            </div>
+        
+        <div class='content'>
+       
         <app-relogio></app-relogio>
+        
     </div>
 
 
-<div class="pages" *ngIf="doubt || config">
+    <div class="pages" *ngIf="doubt || config">
     <div *ngIf="doubt">
         <a href="#" (click)="toggleDoubt()">Fechar (x)</a>
         <app-pagina-duvidas></app-pagina-duvidas>
@@ -42,10 +46,17 @@
         <a href="#" (click)="toggleConfig()">Fechar (x)</a>
         <app-configuracoes></app-configuracoes>
     </div>
+
+    
+
 </div>
 
 </div>
 
 <footer>
-    &copy; Relógio Pomodoro. Todoso os direitos reservados.
+    <div class="content">
+        &copy; Relógio Pomodoro. Todoso os direitos reservados.
+    </div>
 </footer>
+
+
