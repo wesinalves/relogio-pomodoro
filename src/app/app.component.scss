@@ -54,9 +54,9 @@ footer {
 
 .content {
   display: flex;
-  margin: 82px auto 32px;
+  margin: 10px auto 10px;
   padding: 16px 16px;
-  max-width: 960px;
+  max-width: 322px;
   flex-direction: column;
   align-items: center;
   border-width: medium;
@@ -67,10 +67,11 @@ footer {
 header{
     display: flex;
     flex-direction: column;
-    max-width: 960px;
-    max-height: 100px;
+    min-width: 100%;
     align-items: center;
-    margin: 0 auto;    
+    margin: 0 auto;
+    height: 100px;
+    
 }
 .card-container {
   display: flex;

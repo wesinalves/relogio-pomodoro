@@ -20,37 +20,29 @@
                     </li>
                 </ul>
             </nav>
-            
-        
-        </header>
-        
-        <div class="fb-like" data-href="https://relogiopomodoro.com" data-width="" 
+            <div class="fb-like" data-href="https://relogiopomodoro.com" data-width="" 
                 data-layout="button" data-action="like" data-size="small" data-share="true">
             
             </div>
-        
-        <div class='content'>
-       
-        <app-relogio></app-relogio>
-        
-    </div>
-
-
-    <div class="pages" *ngIf="doubt || config">
-    <div *ngIf="doubt">
-        <a href="#" (click)="toggleDoubt()">Fechar (x)</a>
-        <app-pagina-duvidas></app-pagina-duvidas>
-    </div>
-    
-    <div *ngIf="config">
-        <a href="#" (click)="toggleConfig()">Fechar (x)</a>
-        <app-configuracoes></app-configuracoes>
-    </div>
-
-    
-
+        </header>
+             
+        <div class="pages" *ngIf="doubt || config">
+            <div *ngIf="doubt">
+                <a href="#" (click)="toggleDoubt()">Fechar (x)</a>
+                <app-pagina-duvidas></app-pagina-duvidas>
+            </div>
+            
+            <div *ngIf="config">
+                <a href="#" (click)="toggleConfig()">Fechar (x)</a>
+                <app-configuracoes></app-configuracoes>
+            </div>
+ 
+        </div>
 </div>
 
+<div class='content'>
+    <img src="assets/undraw_time_management_30iu.svg" width="120">
+    <app-relogio></app-relogio>
 </div>
 
 <footer>
