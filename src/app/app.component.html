@@ -5,10 +5,13 @@
             <nav>
                 <ul id='horizontal-list'>
                     <li>
-                        <a href="#" (click)="toggleDoubt()">Dúvidas? |</a>
+                        <a routerLink="/">Home |</a>
                     </li>
                     <li>
-                        <a href="#" (click)="toggleConfig()">Configurações |</a>
+                        <a routerLink="/duvidas">Dúvidas? |</a>
+                    </li>
+                    <li>
+                        <a routerLink="/config">Configurações |</a>
                     </li>
                     <li>
                         Histórico |
@@ -26,24 +29,9 @@
             </div>
         </header>
              
-        <div class="pages" *ngIf="doubt || config">
-            <div *ngIf="doubt">
-                <a href="#" (click)="toggleDoubt()">Fechar (x)</a>
-                <app-pagina-duvidas></app-pagina-duvidas>
-            </div>
-            
-            <div *ngIf="config">
-                <a href="#" (click)="toggleConfig()">Fechar (x)</a>
-                <app-configuracoes></app-configuracoes>
-            </div>
- 
-        </div>
 </div>
 
-<div class='content'>
-    <img src="assets/undraw_time_management_30iu.svg" width="120">
-    <app-relogio></app-relogio>
-</div>
+<router-outlet></router-outlet>
 
 <footer>
     <div class="content">

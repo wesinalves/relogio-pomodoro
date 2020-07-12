@@ -1,18 +1,20 @@
-<div class="mensagem" *ngIf="!break">
-    Vai com tudo, campeão!
+<div class='content'>
+    <img src="assets/undraw_time_management_30iu.svg" width="120">
+    <div class="mensagem" *ngIf="!break">
+        Vai com tudo, campeão!
+    </div>
+    <div class="mensagem" *ngIf="break">
+        Hora de relaxar!
+    </div>
+    <div class="relogio">
+        {{minutes | number: '2.0'}}:{{seconds | number: '2.0'}}
+    </div>
+    <div class="buttons">
+        <button (click)="startClock()">Iniciar</button>
+        <button (click)="stopClock()">Parar</button>
+    </div>
+    <div id="sound"></div>
+    
 </div>
-<div class="mensagem" *ngIf="break">
-    Hora de relaxar!
-</div>
-<div class="relogio">
-    {{minutes | number: '2.0'}}:{{seconds | number: '2.0'}}
-</div>
-<div class="buttons">
-    <button (click)="startClock()">Iniciar</button>
-    <button (click)="stopClock()">Parar</button>
-</div>
-<div id="sound"></div>
-
-
 
 
