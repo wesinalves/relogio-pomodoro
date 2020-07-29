@@ -33,11 +33,13 @@ export class RelogioComponent implements OnInit {
             if (this.break == true){
                 this.config.sharedMinute.subscribe(minutes => this.minutes = minutes)
                 this.break = false
+                this.running = false
                 this.notifyMe('Hora de trabalhar!')                                
             }else{
                 this.minutes = this.config.break
                 this.break = true
-                this.notifyMe('Hora de relaxar!')                
+                this.running = false                
+                this.notifyMe('Hora de relaxar!')
             }            
             this.playAlarm()
             return
@@ -63,7 +65,6 @@ export class RelogioComponent implements OnInit {
         } else {
             this.config.sharedMinute.subscribe(minutes => this.minutes = minutes)
             this.seconds = 0
-            this.break = true
         }
         if (this.finalTime == null)
             this.finalTime = new Date()
