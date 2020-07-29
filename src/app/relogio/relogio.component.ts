@@ -14,7 +14,7 @@ export class RelogioComponent implements OnInit {
     initialTime
     finalTime
     break: boolean = false
-    doubt: boolean = false
+    running: boolean = false
 
     constructor(private config: ConfigurationsService, private seoService: SEOService) { }
 
@@ -26,6 +26,8 @@ export class RelogioComponent implements OnInit {
 
     startClock(): void {
         this.seconds -= 1
+        this.running = true
+        
         if (this.seconds <= 0 && this.minutes <= 0) {
             clearTimeout(this.timer)
             if (this.break == true){
@@ -52,6 +54,7 @@ export class RelogioComponent implements OnInit {
     }
 
     stopClock() {
+        this.running = false
         clearTimeout(this.timer)
         if (this.break == true) {
             this.minutes = this.config.break
